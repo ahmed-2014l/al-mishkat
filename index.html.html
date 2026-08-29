@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصة أصحاب السبت الكاملة - موسوعة التوثيق الإسلامي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body {
+            background-color: #f5f2eb;
+            color: #262626;
+            font-family: 'Amiri', serif;
+            margin: 0; 
+            padding: 0;
+            line-height: 2.8;
+        }
+        .page-layout {
+            max-width: 1400px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 25px;
+        }
+        .sidebar-menu {
+            width: 340px;
+            background-color: #ffffff;
+            border: 1px solid #c5a059;
+            border-radius: 16px;
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 25px;
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.15);
+            font-family: 'Cairo', sans-serif;
+        }
+        .sidebar-menu h3 {
+            color: #7a5c12;
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            margin-top: 0;
+            border-bottom: 3px solid #f0e6c8;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        .sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-menu li { margin-bottom: 12px; }
+        .sidebar-menu a {
+            color: #444;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .sidebar-menu a:hover {
+            color: #ffffff;
+            background-color: #9c7b24;
+            padding-right: 20px;
+        }
+        .platform-btn {
+            background-color: #61470c;
+            color: #ffffff !important;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(97, 71, 12, 0.25);
+            font-weight: 700;
+        }
+        .platform-btn:hover {
+            background-color: #7a5c12 !important;
+            padding-right: 14px !important;
+        }
+        .story-container {
+            flex: 1;
+            background-color: #fcfaf5;
+            border: 1px solid #c5a059;
+            border-radius: 20px;
+            padding: 70px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        .story-header {
+            text-align: center;
+            border-bottom: 3px solid #f2eac9;
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+        .story-header h1 {
+            color: #61470c;
+            font-family: 'Amiri', serif;
+            font-size: 3.2rem;
+            margin: 0 0 18px 0;
+            font-weight: 700;
+        }
+        .article-metadata-simple {
+            font-size: 1.1rem;
+            color: #6e6e6e;
+            margin-top: 15px;
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .story-body h2 {
+            color: #61470c;
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            margin-top: 65px;
+            border-right: 6px solid #c5a059;
+            padding-right: 18px;
+            background: linear-gradient(to left, #f3ecdf, #fcfaf5);
+            padding-top: 12px; 
+            padding-bottom: 12px;
+        }
+        .story-body p {
+            font-size: 1.3rem;
+            text-align: justify;
+            margin-bottom: 35px;
+            color: #2d2d2d;
+            font-family: 'Amiri', serif;
+            line-height: 2.8;
+        }
+        .narrative-quote {
+            background-color: #f3ecdf;
+            border-left: 5px solid #c5a059;
+            border-right: 5px solid #c5a059;
+            padding: 25px 30px;
+            margin: 40px 0;
+            font-style: normal;
+            color: #1b5e20;
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 2.5;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+        .story-highlight {
+            color: #262626;
+            font-weight: 700;
+        }
+        .sources-section {
+            margin-top: 80px;
+            border-top: 3px solid #f2eac9;
+            padding-top: 40px;
+        }
+        .sources-section h3 {
+            color: #61470c;
+            font-family: 'Amiri', serif;
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+        }
+        .sources-grid {
+            display: grid;
+            gap: 15px;
+            font-family: 'Cairo', sans-serif;
+        }
+        .source-card {
+            background-color: #ffffff;
+            border: 1px solid #e2d7c1;
+            padding: 18px 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .source-card strong {
+            color: #7a5c12;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .source-card p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+            text-align: right;
+        }
+        @media (max-width: 768px) {
+            .page-layout { flex-direction: column; padding: 12px; }
+            .sidebar-menu { width: 100%; position: static; }
+            .story-container { padding: 30px; }
+            .story-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-layout">
+        
+        <div class="story-container">
+            <div class="story-header">
+                <h1>قصة أصحاب السبت العظيمة</h1>
+                <div class="article-metadata-simple">
+                    <span>التصنيف: قصص القرآن والسنة</span>
+                    <span>•</span>
+                    <span>مدة القراءة: 10 دقائق</span>
+                    <span>•</span>
+                    <span>تاريخ المراجعة: أغسطس 2026</span>
+                    <span>•</span>
+                    <span>التوثيق: القرآن الكريم وكتب التفسير المعتمدة</span>
+                </div>
+            </div>
+
+            <div class="story-body">
+                <h2 id="section1">1. التمهيد ومقدمة الحدث القرآني</h2>
+                <p>تُعد قصة "أصحاب السبت" واحدة من أعظم القصص القرآنية وأبلغها عبرةً وعظةً، والتي وردت في محكم التنزيل في مواضع عدة من كتاب الله تعالى، أبرزها في سورة الأعراف وسورة البقرة والسورة النساء. إنها تمثل قصة جماعة من بني إسرائيل سكنوا في قرية ساحلية على شاطئ البحر (ذكر المؤهلون والمفسرون أنها مدينة أيلة أو مدين على البحر الأحمر)، ابتلاهم الله عز وجل اختباراً عظيماً ليميز الصادق من الماكر، وليرى مدى التزامهم بأوامره ونواهيه، فوقعوا في محظور التحايل على شرع الله، وكانت العاقبة وخيمة ومفجعة لكل من يتلاعب بالحدود الإلهية.</p>
+
+                <h2 id="section2">2. طبيعة الابتلاء والاختبار الإلهي</h2>
+                <p>لقد فرض الله سبحانه وتعالى على أهالي هذه القرية الساحلية تعظيماً ليوم السبت؛ حيث حرم عليهم فيه الصيد والاشتغال بأمور الدنيا وجعل يوم عبادتهم وتفرغهم، فكانت أحكامهم الشرعية تقتضي عدم التعرض للصيد بتاتاً في هذا اليوم المبارك. لحكمة بالغة واختبار دقيق لصدق قلوبهم، اقتضت إرادة الله أن تختفي الأسماك طوال أيام الأسبوع فلا تظهر للشباك ولا للمتاعب، ولكنها تأتي وتتراءى وتكثر وتتكاتف بشكل مثير ومغري جداً يوم السبت تحديداً، فتخرج الحيتان شرّعاً (أي ظاهرة على وجه الماء متقاربة وكثيرة)، ولا تظهر في أيام الجمعة والأحد التي أحل الله لهم فيها الصيد إلا نزراً قليلاً. وبدأت النفوس الضعيفة تتزلزل أمام هذا الإغراء المادي الهائل، وتحرك طمع الدنايا في قلوب طائفة من أهل القرية.</p>
+
+                <h2 id="section3">3. المكر والتحايل على الشريعة</h2>
+                <p>لم يجرؤ هؤلاء القوم على صيد السمك مباشرة وصراحة يوم السبت خوفاً من النص صراحة، بل لجأوا إلى الحيلة والتلبيس والمكر السيء لخداع القدر الإلهي واستغلال الثغرات الوهمية. فماذا فاعلون؟ عمدوا إلى حفر حياض وشباك وقنوات مائية موصولة من البحر إلى شواطئهم يوم الجمعة، فإذا جاء يوم السبت ودخلت الحيتان الوفيرة تتدفق مع المياه إلى داخل تلك الحياض والبرك المعدة مسبقاً، تنغلق عليها المنافذ أو تعجز عن الخروج لضحالة الماء بعد انحساره أو بوضع الحواجز الخفية. ثم ينتظر هؤلاء المتحايلون حتى إذا انقضى يوم السبت وطلع فجر الأحد، أقبلوا إلى تلك الحياض فأخذوا الحيتان بكل راحّة وسهولة، واقترفوا محظور الصيد متصورين بجهلهم أنهم نجوا من العقوبة واستحفلوا الحيلة على الخالق العليم بذات الصدور.</p>
+
+                <h2 id="section4">4. انقسام المجتمع والموقف الإيجابي للآمرين بالمعروف</h2>
+                <p>أمام هذا الانتهاك السافر والتحايل الظالم، لم تسكت القرية بأكملها، بل انقسم المجتمع إزاء هذه الجريمة إلى ثلاثة فرق رئيسية ومتميزة كما حكى القرآن الكريم:
+                <br><br>
+                أ) <span class="story-highlight">الطائفة العاصية المتحايلة:</span> وهي التي ارتكبت الفعل وصادت الحيتان بطرق الخداع وتورطت في المعصية بشكل مباشر.
+                <br><br>
+                ب) <span class="story-highlight">الطائفة الناصحة الآمرة بالمعروف والناهية عن المنكر:</span> وهم الفئة المؤمنة الصالحة التي أنكرت المنكر بقوة، وعاتبت المعتدين ونصحتهم بصدق، وحذرتهم من غضب الله وعقوبته الأليمة.
+                <br><br>
+                ج) <span class="story-highlight">الطائفة السلبية أو المعذرة:</span> وهي فئة آثرت السلامة ولم تعصِ الله، لكنها لم تنكر على العصاة بل قالت للناصحين بعبارات اليأس: <span class="story-highlight">"لم تَعِظُونَ قَوْماً اللَّهُ مُهْلِكُهُمْ أَوْ مُعَذِّبهُمْ عَذَاباً شَدِيداً"</span>، فرد عليهم الناصحون بكل إيجابية وبراءة ذمة: <span class="story-highlight">"مَعْذِرَةً إِلَى رَبِّكُمْ وَلَعَلَّهُمْ يَتَّقُونَ"</span>.</p>
+
+                <h2 id="section5">5. نزول العذاب وحلول العقوبة الإلهية الكبرى</h2>
+                <p>لما استمرت الطائفة العاصية في غيها وطغيانها ولم تجدِ معها النصائح المستمرة، وأصرت على العناد والتلبيس، جاء أمر الله النافذ وحلت الطامة الكبرى التي لا مرد لها. فنجى الله سبحانه وتعالى بحكمته ورحمته الطائفة المؤمنة التي كانت تأمر بالمعروف وتنهى عن المنكر لأنهم قاموا بواجبهم وبرئت ذمتهم، وأما الطائفة المعذرة (الساكتة) فقد اختلف المفسرون في نجاتها، بينما وقع العذاب الأليم والعقوبة المدمرة بالكامل على الطائفة العاصية الظالمة. لقد مسخهم الله عز وجل وهشّم صورهم الإنسانية، فحولهم بقوته وجبروته إلى قردة خاسئين، صاغرين، ذليلين، لا تأكل ولا تشرب ولا تعيش طويلاً، بل تقبع في ذل المسخ والهوان.</p>
+
+                <div class="narrative-quote">
+                    "وَلَقَدْ عَلِمْتُمُ الَّذِينَ اعْتَدَوْا مِنْكُمْ فِي السَّبْتِ فَقُلْنَا لَهُمْ كُونُوا قِرَدَةً خَاسِئِينَ (65) فَجَعَلْنَاهَا نَكَالاً لِمَا بَيْنَ يَدَيْهَا وَمَا خَلْفَهَا وَمَوْعِظَةً لِلْمُتَّقِينَ (66)" [سورة البقرة: 65-66]
+                </div>
+
+                <h2 id="section6">6. تفاصيل المسخ والآثار التاريخية للموقف</h2>
+                <p>تذكر روايات التفسير والسير أن هؤلاء المعتدين لما تحولوا إلى قردة، بقوا معروفين بأشكالهم الجديدة، وكانوا يعرفون أنسابهم وأقاربهم من البشر فلا يقتربون منهم، بل كانوا يبكون ويستعطفون أهلهم من البشر دون أن يدركوا النجاة. وقد جعل الله هذه العقوبة نكالاً، أي عبرة وعظة وعقوبة رادعة لكل من تسول له نفسه التحايل على شرائع الدين ومخالفة أوامر الخالق بحجج واهية وألاعيب لفظية أو مادية. فالحلال بين والحرام بين، والله سبحانه وتعالى يعلم خائنة الأعين وما تخفي الصدور، ولا تنطلي عليه حيل المتحايلين.</p>
+
+                <h2 id="section7">7. العِبر والفوائد المستفادة والدروس المستوحاة</h2>
+                <p>1. <span class="story-highlight">خطورة التحايل على أحكام الشريعة:</span> إن الله تعالى يعلم القلوب والنيات، والتلاعب بالألفاظ أو الأساليب للوصول إلى الحرام لا يغير من حقيقة التحريم شيئاً بل يضاعف الإثم والعقوبة.<br><br>
+                2. <span class="story-highlight">فريضة الأمر بالمعروف والنهي عن المنكر:</span> النجاة عند نزول البلايا والعقوبات تكون لمن قام بواجبه في الإنكار والنصح، فالسكوت على الظلم والفساد يجر هلاكاً عاماً على المجتمعات.<br><br>
+                3. <span class="story-highlight">شمولية الابتلاء الإلهي:</span> قد يبتلي الله عباده بأوقات تشتد فيها المغريات وتسهل فيها المعاصي، ليتبين الصادق الثابت من الطامع المتمرد.</p>
+
+                <div class="sources-section">
+                    <h3>المصادر والمراجع التاريخية والشرعية المعتمدة</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <strong>1. القرآن الكريم</strong>
+                            <p>سورة البقرة (الآيات 65-66)، سورة الأعراف (الآيات 163-166)، وسورة النساء.</p>
+                        </div>
+                        <div class="source-card">
+                            <strong>2. تفسير ابن كثير (تفسير القرآن العظيم)</strong>
+                            <p>مبحث تفصيل قصة أصحاب السبت وأقوال السلف في كيفية الحيلة والعقوبة.</p>
+                        </div>
+                        <div class="source-card">
+                            <strong>3. تفسير الطبري (جامع البيان في تأويل آي القرآن)</strong>
+                            <p>عرض الروايات التاريخية والآثار المروية عن الصحابة والتابعين في قصة القرية الساحلية.</p>
+                        </div>
+                        <div class="source-card">
+                            <strong>4. البداية والنهاية (ابن كثير)</strong>
+                            <p>بيان قصص الأمم السابقة وأخبار بني إسرائيل وما نزل بهم من نكال وعذاب.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar-menu">
+            <a href="https://al-mishkat.web.app/#library" target="_blank" class="platform-btn">العودة للمنصة</a>
+            <h3>فهرس محاور القصة</h3>
+            <ul>
+                <li><a href="#section1">1. التمهيد والمقدمة</a></li>
+                <li><a href="#section2">2. طبيعة الابتلاء والاختبار</a></li>
+                <li><a href="#section3">3. المكر والتحايل</a></li>
+                <li><a href="#section4">4. انقسام المجتمع</a></li>
+                <li><a href="#section5">5. نزول العذاب</a></li>
+                <li><a href="#section6">6. تفاصيل المسخ</a></li>
+                <li><a href="#section7">7. العبر والفوائد</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
